@@ -8,7 +8,7 @@ const Header = ({ columns, highlight, setHighlightCol }) => {
         {columns.map((col) => (
           <th
             key={col}
-            onClick={() => setHighlightCol(col)} // Active le surlignage de la colonne
+            onClick={() => setHighlightCol(col)}
             className={highlight === col ? 'highlight' : ''}
           >
             {col}

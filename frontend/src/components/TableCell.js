@@ -4,16 +4,13 @@ const TableCell = ({ row, col, value, onUpdate, highlight }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [cellValue, setCellValue] = useState(value);
 
-  // Synchronisation de l'état cellValue avec la prop value à chaque mise à jour
   useEffect(() => {
     setCellValue(value);
-  }, [value]); // Mettre à jour cellValue lorsque 'value' change
-
+  }, [value]);
   const handleDoubleClick = () => setIsEditing(true);
 
   const handleBlur = () => {
     setIsEditing(false);
-    // Si la valeur a changé, appeler onUpdate pour mettre à jour la base de données
     if (cellValue !== value) {
       onUpdate(row, col, cellValue);
     }
@@ -35,7 +32,7 @@ const TableCell = ({ row, col, value, onUpdate, highlight }) => {
           autoFocus
         />
       ) : (
-        cellValue || '' // Afficher une chaîne vide si la valeur est undefined
+        cellValue || '' 
       )}
     </td>
   );

@@ -15,7 +15,7 @@ const Table = () => {
     fetch(`http://localhost:${API_PORT}/table`)
       .then((res) => res.json())
       .then(setData)
-      .catch((err) => console.error('Erreur:', err));
+      .catch((err) => console.error('Error:', err));
 
       const handleClickOutside = (e) => {
         if (tableRef.current && !tableRef.current.contains(e.target)) {
@@ -47,7 +47,7 @@ const Table = () => {
           );
         }
       })
-      .catch((err) => console.error('Erreur:', err));
+      .catch((err) => console.error('Error:', err));
   };
 
   const resetTable = () => {
@@ -60,10 +60,10 @@ const Table = () => {
           fetch(`http://localhost:${API_PORT}/table`)
             .then((res) => res.json())
             .then(setData)
-            .catch((err) => console.error('Erreur:', err));
+            .catch((err) => console.error('Error:', err));
         }
       })
-      .catch((err) => console.error('Erreur lors de la réinitialisation du tableau:', err));
+      .catch((err) => console.error('Error while trying to reset the table:', err));
   };
 
 
