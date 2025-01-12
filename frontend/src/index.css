@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 8px;
+}
+
+td input {
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.highlight {
+  background-color: #f0f8ff;
+}
+
+/* Surbrillance pour les lignes */
+.highlight-row td {
+  background-color: #f0f8ff;
+}

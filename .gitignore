@@ -1,0 +1,65 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+*.tgz
+
+# Logs
+logs
+*.log
+logs/*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build directories
+build/
+dist/
+coverage/
+
+# Dependency directories
+jspm_packages/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# JetBrains IDEs (IntelliJ IDEA, WebStorm, etc.)
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+
+# React specific
+# Cache
+.cache/
+
+# Temporary files
+*.swp
+*.swo
+
+# Testing
+*.test.js
+*.test.ts
+*.test.jsx
+*.test.tsx
+*.spec.js
+*.spec.ts
+*.spec.jsx
+*.spec.tsx
+
+# Temporary/Editor files
+*.bak
+*.tmp
+*~
+*.swp
