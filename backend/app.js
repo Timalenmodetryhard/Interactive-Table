@@ -12,23 +12,19 @@ const app = express();
 
 app.use(express.json());
 
-// Connexion à MongoDB
 mongoose.connect(config.uri, {
-  serverSelectionTimeoutMS: 5000, // Temps limite pour sélectionner un serveur
+  serverSelectionTimeoutMS: 5000,
 })
-  .then(() => console.log('Connexion à MongoDB réussie'))
-  .catch((err) => console.error('Erreur de connexion à MongoDB :', err));
+  .then(() => console.log('Succefully connected to MongoDB'))
+  .catch((err) => console.error('Error while trying to connect to MongoDB :', err));
 
-// Configuration CORS
 app.use(cors({
-  origin: `http://localhost:${PORT_FRONTEND}`, // Adresse du frontend
-  methods: ['GET', 'POST', 'DELETE'],       // Méthodes autorisées
+  origin: `http://localhost:${PORT_FRONTEND}`, 
+  methods: ['GET', 'POST', 'DELETE'],
 }));
 
-// Routes
 app.use('/table', tableRoutes);
 
-// Démarrer le serveur
 app.listen(PORT, () => {
-  console.log(`Serveur démarré sur le port ${PORT}`);
+  console.log(`Server started on port ${PORT}`);
 });

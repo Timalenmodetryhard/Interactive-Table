@@ -7,7 +7,7 @@ const generateDefaultData = (rows, columns) => {
   const data = [];
   for (let row = 1; row <= rows; row++) {
     for (const col of columns) {
-      data.push({ row, col, value: `Valeur ${col}${row}` });
+      data.push({ row, col, value: `Value ${col}${row}` });
     }
   }
   return data;
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 
     res.status(200).json(tableData);
   } catch (error) {
-    res.status(500).json({ message: 'Erreur lors de la récupération des données', error });
+    res.status(500).json({ message: 'Error while trying to get the datas', error });
   }
 });
 
@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
   const { row, col, value } = req.body;
 
   if (!row || !col || value === undefined) {
-    return res.status(400).json({ message: 'Paramètres manquants : row, col ou value' });
+    return res.status(400).json({ message: 'Missing parameters : row, col or value' });
   }
 
   try {
@@ -50,9 +50,9 @@ router.post('/', async (req, res) => {
       await cell.save();
     }
 
-    res.status(200).json({ message: 'Cellule mise à jour', cell });
+    res.status(200).json({ message: 'The cell have been updated', cell });
   } catch (error) {
-    res.status(500).json({ message: 'Erreur lors de la mise à jour de la cellule', error });
+    res.status(500).json({ message: 'Error while trying to reset the cell', error });
   }
 });
 
@@ -66,9 +66,9 @@ router.delete('/', async (req, res) => {
   
       await Table.insertMany(defaultData);
   
-      res.status(200).json({ message: 'Tableau réinitialisé avec les valeurs par défaut' });
+      res.status(200).json({ message: 'The table have been succefully reseted' });
     } catch (error) {
-      res.status(500).json({ message: 'Erreur lors de la réinitialisation du tableau', error });
+      res.status(500).json({ message: 'Error while trying to reset the table', error });
     }
   });
   
